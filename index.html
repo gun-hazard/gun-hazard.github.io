@@ -1,175 +1,320 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gun Hazard — Criador de conteúdo de RPG independente</title>
-  <meta name="description" content="Gun Hazard — criador de conteúdo de RPG independente. Acesse o criador de fichas de personagens online ou baixe para usar offline." />
-  <style>
-    :root {
-      --bg: #0f0e17;
-      --bg2: #1a1830;
-      --card: #1e1c33;
-      --text: #fffffe;
-      --muted: #a7a9be;
-      --accent: #e53170;
-      --accent2: #ff8906;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, sans-serif;
-      background: radial-gradient(1200px 600px at 50% -10%, #2a2658 0%, var(--bg) 60%) fixed, var(--bg);
-      color: var(--text);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      line-height: 1.6;
-    }
-    header {
-      text-align: center;
-      padding: 72px 24px 24px;
-      max-width: 720px;
-    }
-    .badge {
-      display: inline-block;
-      font-size: 0.85rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--muted);
-      border: 1px solid #2e2b52;
-      padding: 6px 14px;
-      border-radius: 999px;
-      margin-bottom: 20px;
-      background: rgba(255,255,255,0.03);
-    }
-    h1 {
-      font-size: clamp(2.5rem, 6vw, 4rem);
-      line-height: 1.05;
-      letter-spacing: -0.02em;
-    }
-    h1 span {
-      background: linear-gradient(90deg, var(--accent), var(--accent2));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-    .subtitle {
-      margin-top: 16px;
-      font-size: 1.25rem;
-      color: var(--muted);
-    }
-    main {
-      width: 100%;
-      max-width: 720px;
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-    .card {
-      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02)), var(--card);
-      border: 1px solid #2e2b52;
-      border-radius: 20px;
-      padding: 28px;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
-    }
-    .card h2 {
-      font-size: 1.5rem;
-      margin-bottom: 8px;
-    }
-    .card p {
-      color: var(--muted);
-      margin-bottom: 20px;
-    }
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 12px 20px;
-      border-radius: 12px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: transform 0.1s ease, opacity 0.2s;
-      border: 1px solid transparent;
-    }
-    .btn:hover { transform: translateY(-1px); opacity: 0.95; }
-    .btn-primary {
-      background: linear-gradient(90deg, var(--accent), var(--accent2));
-      color: white;
-    }
-    .btn-secondary {
-      background: transparent;
-      color: var(--text);
-      border-color: #3f3a74;
-    }
-    .meta {
-      margin-top: 16px;
-      font-size: 0.9rem;
-      color: var(--muted);
-      word-break: break-all;
-    }
-    .meta code {
-      background: #0f0e17;
-      padding: 2px 6px;
-      border-radius: 6px;
-      border: 1px solid #2e2b52;
-    }
-    footer {
-      margin-top: auto;
-      padding: 32px 24px;
-      color: var(--muted);
-      font-size: 0.9rem;
-      text-align: center;
-    }
-    footer a { color: var(--text); }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>GUN HAZARD — RPG independente | MISSION SELECT</title>
+<meta name="description" content="Gun Hazard — criador de conteúdo de RPG independente. Criador de Fichas: jogue online ou baixe o .zip" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#060806;
+    --panel:#0e150f;
+    --panel2:#111a13;
+    --green:#33ff66;
+    --dim:#1d5c2f;
+    --cyan:#00e5ff;
+    --amber:#ffb000;
+    --red:#ff3344;
+    --paper:#e8e0b8;
+    --line:#2a3f2e;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{background:var(--bg)}
+  body{
+    font-family:'VT323',monospace;
+    font-size:22px;
+    line-height:1.4;
+    color:var(--green);
+    background:
+      radial-gradient(ellipse at 50% 0%, #16251a 0%, var(--bg) 65%) fixed,
+      var(--bg);
+    min-height:100vh;
+    image-rendering:pixelated;
+    padding:16px 12px 40px;
+    text-shadow:0 0 6px rgba(51,255,102,.35);
+  }
+  /* CRT overlays */
+  body::before{
+    content:"";
+    position:fixed;inset:0;pointer-events:none;z-index:50;
+    background:repeating-linear-gradient(
+      to bottom,
+      rgba(0,0,0,.28) 0px, rgba(0,0,0,.28) 2px,
+      transparent 2px, transparent 5px
+    );
+    mix-blend-mode:multiply;
+  }
+  body::after{
+    content:"";
+    position:fixed;inset:0;pointer-events:none;z-index:51;
+    background:radial-gradient(ellipse at center, transparent 55%, rgba(0,0,0,.55) 100%);
+  }
+  .wrap{max-width:880px;margin:0 auto;position:relative;z-index:1}
+  .pix{
+    background:var(--panel);
+    border:4px solid var(--paper);
+    outline:4px solid #000;
+    box-shadow:0 0 0 6px #000, 0 0 24px rgba(51,255,102,.15), inset 0 0 40px rgba(0,0,0,.7);
+    border-radius:2px;
+  }
+  /* HUD */
+  .hud{
+    display:flex;justify-content:space-between;align-items:center;gap:12px;
+    padding:10px 14px;
+    font-family:'Press Start 2P',monospace;
+    font-size:10px;
+    color:var(--paper);
+    background:#000;
+    border:4px solid #000;
+    outline:4px solid var(--line);
+    margin-bottom:16px;
+    text-shadow:none;
+  }
+  .hud .online{color:var(--green)}
+  .dot{display:inline-block;width:10px;height:10px;background:var(--green);margin-right:8px;animation:blink 1s steps(2) infinite;box-shadow:0 0 8px var(--green)}
+  @keyframes blink{50%{opacity:0}}
+  /* Title */
+  .titlebox{text-align:center;padding:28px 18px 20px;margin-bottom:16px;position:relative;overflow:hidden}
+  .titlebox::before{
+    content:"";position:absolute;inset:0;opacity:.12;
+    background-image:linear-gradient(#1d5c2f 1px, transparent 1px), linear-gradient(90deg, #1d5c2f 1px, transparent 1px);
+    background-size:16px 16px;
+    pointer-events:none;
+  }
+  .kicker{font-family:'Press Start 2P',monospace;font-size:10px;color:var(--cyan);letter-spacing:1px;margin-bottom:18px;text-shadow:0 0 8px rgba(0,229,255,.6)}
+  h1{
+    font-family:'Press Start 2P',monospace;
+    font-size:clamp(28px,7vw,56px);
+    line-height:1.1;
+    color:#fff;
+    text-shadow:
+      0 4px 0 #000,
+      4px 4px 0 #000,
+      4px 0 0 #000,
+      0 0 0 #000,
+      4px 8px 0 var(--red),
+      8px 12px 0 #000;
+    letter-spacing:2px;
+    margin-bottom:6px;
+  }
+  h1 .alt{color:var(--amber);text-shadow:0 4px 0 #000,4px 4px 0 #000,4px 8px 0 #7a3a00,8px 12px 0 #000}
+  .sub{color:var(--paper);font-size:26px;margin-top:14px}
+  .press{font-family:'Press Start 2P',monospace;font-size:11px;color:#fff;margin-top:18px;animation:blink 1.1s steps(2) infinite}
+  /* Grid */
+  .grid{display:grid;grid-template-columns:300px 1fr;gap:16px;margin-bottom:16px}
+  @media(max-width:700px){.grid{grid-template-columns:1fr}}
+  .panel{padding:16px}
+  .panel h2{
+    font-family:'Press Start 2P',monospace;font-size:11px;
+    color:#000;background:var(--green);
+    display:inline-block;padding:6px 8px;margin-bottom:14px;
+    box-shadow:4px 4px 0 #000;
+    text-shadow:none;
+  }
+  .panel h2.amber{background:var(--amber)}
+  .panel h2.cyan{background:var(--cyan)}
+  .portrait{
+    background:#000;border:4px solid var(--line);
+    padding:8px;display:flex;gap:12px;align-items:center;margin-bottom:14px;
+  }
+  .portrait svg{width:96px;height:96px;flex-shrink:0;background:#0a1a0f;border:2px solid var(--dim);image-rendering:pixelated}
+  .pinfo{font-size:20px;line-height:1.25}
+  .pinfo b{color:#fff}
+  .bar{margin:8px 0}
+  .bar label{font-family:'Press Start 2P',monospace;font-size:9px;color:var(--paper);display:flex;justify-content:space-between;margin-bottom:4px;text-shadow:none}
+  .track{background:#000;border:2px solid var(--line);height:16px;position:relative}
+  .fill{height:100%;image-rendering:pixelated}
+  .fill.hp{width:92%;background:repeating-linear-gradient(90deg,var(--green) 0 8px,#0a3a18 8px 10px)}
+  .fill.en{width:78%;background:repeating-linear-gradient(90deg,var(--cyan) 0 8px,#0a2f3a 8px 10px)}
+  .fill.xp{width:64%;background:repeating-linear-gradient(90deg,var(--amber) 0 8px,#3a260a 8px 10px)}
+  .stats{list-style:none;margin-top:12px;font-size:20px;color:var(--paper)}
+  .stats li{border-top:2px dotted var(--line);padding:4px 0;display:flex;justify-content:space-between}
+  .stats li span:last-child{color:var(--green)}
+  /* Mission select */
+  .mission{
+    display:block;text-decoration:none;color:inherit;
+    border:3px solid var(--line);background:#080d09;
+    padding:12px 12px 12px 14px;margin-bottom:12px;
+    position:relative;cursor:pointer;
+  }
+  .mission .num{font-family:'Press Start 2P',monospace;font-size:10px;color:var(--cyan);margin-bottom:8px}
+  .mission .t{font-family:'Press Start 2P',monospace;font-size:13px;color:#fff;line-height:1.5;margin-bottom:6px;text-shadow:none}
+  .mission .d{font-size:21px;color:#9db8a0}
+  .mission .go{
+    margin-top:10px;display:inline-block;
+    font-family:'Press Start 2P',monospace;font-size:10px;
+    padding:10px 12px;background:#000;border:3px solid var(--green);color:var(--green);
+  }
+  .mission.sel, .mission:hover{
+    border-color:var(--amber);background:#131007;
+    box-shadow:0 0 0 2px #000, 0 0 18px rgba(255,176,0,.25);
+    text-shadow:0 0 6px rgba(255,176,0,.4);
+  }
+  .mission.sel::before{
+    content:"▶";position:absolute;left:-4px;top:50%;transform:translate(-100%,-50%);
+    color:var(--amber);font-family:'Press Start 2P',monospace;font-size:16px;
+    animation:blink .7s steps(2) infinite;
+  }
+  .mission.sel .go{background:var(--amber);border-color:var(--amber);color:#000;text-shadow:none;box-shadow:4px 4px 0 #000}
+  .mission.dl.sel .go{background:var(--cyan);border-color:var(--cyan)}
+  .mission.dl.sel{border-color:var(--cyan);box-shadow:0 0 0 2px #000,0 0 18px rgba(0,229,255,.25)}
+  .mission.dl.sel::before{color:var(--cyan)}
+  .sys{font-size:19px;color:#6e8a72;margin-top:4px}
+  .sys code{color:var(--paper);word-break:break-all}
+  /* dialogue */
+  .dlg{padding:16px;display:flex;gap:14px;align-items:flex-start}
+  .face{
+    width:56px;height:56px;flex-shrink:0;background:var(--amber);border:4px solid #000;outline:3px solid var(--paper);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Press Start 2P',monospace;font-size:22px;color:#000;text-shadow:none;
+  }
+  .dlg .name{font-family:'Press Start 2P',monospace;font-size:10px;color:var(--amber);margin-bottom:8px}
+  .dlg .text{font-size:23px;color:#fff;min-height:3.2em}
+  .dlg .text::after{content:"▼";margin-left:8px;font-size:16px;color:var(--amber);animation:blink 1s steps(2) infinite}
+  .hint{
+    margin-top:16px;text-align:center;
+    font-family:'Press Start 2P',monospace;font-size:9px;color:#7a8f7d;line-height:2;
+  }
+  .hint b{color:var(--paper);border:2px solid var(--line);padding:2px 6px;background:#000}
+  footer{margin-top:14px;text-align:center;font-size:19px;color:#5a705e}
+  footer a{color:var(--paper)}
+</style>
 </head>
 <body>
-  <header>
-    <div class="badge">🎲 RPG independente</div>
-    <h1>Gun <span>Hazard</span></h1>
-    <p class="subtitle">criador de conteúdo de RPG independente</p>
-  </header>
+<div class="wrap">
 
-  <main>
-    <section class="card">
-      <h2>📜 Criador de Fichas de Personagens</h2>
-      <p>Crie, edite e gerencie fichas de personagens para suas mesas de RPG. Use direto no navegador ou baixe para jogar offline.</p>
-      <div class="actions">
-        <a class="btn btn-primary" href="https://gun-hazard.github.io/criador_de_fichas/" target="_blank" rel="noopener">
-          ▶ Acessar online
-        </a>
-        <a class="btn btn-secondary" href="https://gun-hazard.github.io/criador_de_fichas.zip" download>
-          ⬇ Baixar (.zip)
-        </a>
+  <div class="hud">
+    <div>◤ GUN-HAZARD.OS v16</div>
+    <div><span class="dot"></span><span class="online">● ONLINE</span> &nbsp; ©1996-2026</div>
+  </div>
+
+  <div class="pix titlebox">
+    <div class="kicker">★ SUPER 16-BIT RPG TOOL ★</div>
+    <h1>GUN <span class="alt">HAZARD</span></h1>
+    <div class="sub">— criador de conteúdo de RPG independente —</div>
+    <div class="press">▼ SELECT MISSION ▼</div>
+  </div>
+
+  <div class="grid">
+    <section class="pix panel">
+      <h2>■ PLAYER STATUS</h2>
+      <div class="portrait">
+        <!-- pixel wanzer / runner portrait -->
+        <svg viewBox="0 0 32 32" shape-rendering="crispEdges" aria-label="pixel mech">
+          <rect x="0" y="0" width="32" height="32" fill="#0a140d"/>
+          <rect x="14" y="1" width="2" height="6" fill="#8a8f98"/>
+          <rect x="13" y="0" width="4" height="2" fill="#ff3344"/>
+          <rect x="7" y="7" width="18" height="13" fill="#8a8f98"/>
+          <rect x="7" y="7" width="18" height="2" fill="#c9ced6"/>
+          <rect x="7" y="18" width="18" height="2" fill="#4a4e57"/>
+          <rect x="9" y="11" width="14" height="5" fill="#000"/>
+          <rect x="10" y="12" width="12" height="3" fill="#ffb000"/>
+          <rect x="10" y="12" width="4" height="3" fill="#00e5ff"/>
+          <rect x="11" y="20" width="10" height="3" fill="#5a5e3a"/>
+          <rect x="5" y="23" width="22" height="7" fill="#3a3f4a"/>
+          <rect x="5" y="23" width="22" height="2" fill="#5a6270"/>
+          <rect x="8" y="25" width="5" height="3" fill="#33ff66"/>
+          <rect x="19" y="25" width="5" height="3" fill="#33ff66"/>
+        </svg>
+        <div class="pinfo">
+          <b>GUN HAZARD</b><br>
+          CLASS: DECKER<br>
+          ORIGIN: MESA INDIE
+        </div>
       </div>
-      <div class="meta">
-        Online: <code>https://gun-hazard.github.io/criador_de_fichas/</code><br />
-        Download: <code>https://gun-hazard.github.io/criador_de_fichas.zip</code>
-      </div>
+      <div class="bar"><label><span>HP</span><span>92/100</span></label><div class="track"><div class="fill hp"></div></div></div>
+      <div class="bar"><label><span>EN</span><span>78/100</span></label><div class="track"><div class="fill en"></div></div></div>
+      <div class="bar"><label><span>XP</span><span>LV.16</span></label><div class="track"><div class="fill xp"></div></div></div>
+      <ul class="stats">
+        <li><span>⚔ MESAS</span><span>+99</span></li>
+        <li><span>✸ SISTEMA</span><span>16-BIT</span></li>
+        <li><span>◈ ALINHAM.</span><span>CAÓT.NEUTRO</span></li>
+      </ul>
     </section>
 
-    <section class="card">
-      <h2>👋 Sobre</h2>
-      <p>Olá! Eu sou o <strong>Gun Hazard</strong>, criador de conteúdo de RPG independente. Aqui você encontra minhas ferramentas e projetos para turbinar suas mesas.</p>
-      <p style="margin:0">Encontrou um bug ou tem uma sugestão? Abra uma issue no <a href="https://github.com/gun-hazard" style="color:#fff">GitHub</a>.</p>
+    <section class="pix panel">
+      <h2 class="amber">■ MISSION SELECT</h2>
+
+      <a id="m1" class="mission sel" href="https://gun-hazard.github.io/criador_de_fichas/">
+        <div class="num">MISSION 01 — SHADOW TERMINAL</div>
+        <div class="t">CRIADOR DE FICHAS DE PERSONAGENS</div>
+        <div class="d">Crie e gerencie fichas p/ sua mesa. Roda direto no browser, sem instalar nada.</div>
+        <span class="go">▶ ACESSAR ONLINE</span>
+        <div class="sys">SYS: <code>gun-hazard.github.io/criador_de_fichas/</code></div>
+      </a>
+
+      <a id="m2" class="mission dl" href="https://gun-hazard.github.io/criador_de_fichas.zip" download>
+        <div class="num">MISSION 02 — WANZER SUPPLY DROP</div>
+        <div class="t">DOWNLOAD P/ JOGAR OFFLINE</div>
+        <div class="d">Baixe o .zip completo. Ideal p/ mesa sem internet ou backup.</div>
+        <span class="go">⬇ DOWNLOAD .ZIP</span>
+        <div class="sys">FILE: <code>criador_de_fichas.zip</code></div>
+      </a>
     </section>
-  </main>
+  </div>
+
+  <div class="pix dlg">
+    <div class="face">GH</div>
+    <div style="flex:1">
+      <div class="name">GUN HAZARD:</div>
+      <div class="text" id="type"></div>
+    </div>
+  </div>
+
+  <div class="hint">
+    <b>↑↓</b> SELECIONAR &nbsp; <b>ENTER</b> CONFIRMAR &nbsp; <b>MOUSE/TOQUE</b> OK<br>
+    FRONT MISSION: GUN HAZARD × SHADOWRUN TRIBUTE — INSERT COIN
+  </div>
 
   <footer>
-    © <span id="ano">2026</span> Gun Hazard — Feito para mesas de RPG.<br />
-    <a href="https://gun-hazard.github.io/">gun-hazard.github.io</a>
+    © <span id="ano">2026</span> Gun Hazard — <a href="https://gun-hazard.github.io/">gun-hazard.github.io</a> —
+    <a href="https://github.com/gun-hazard">github</a>
   </footer>
 
-  <script>
-    document.getElementById('ano').textContent = new Date().getFullYear();
-  </script>
+</div>
+
+<script>
+  document.getElementById('ano').textContent = new Date().getFullYear();
+
+  // typewriter NPC
+  const msg = "Olá, chummer! Eu sou o Gun Hazard, criador de conteúdo de RPG independente. Escolha sua missão: acesse o Criador de Fichas online ou baixe o .zip para levar na mochila.";
+  const el = document.getElementById('type');
+  let i = 0;
+  (function type(){
+    if(i <= msg.length){
+      el.textContent = msg.slice(0, i++);
+      setTimeout(type, 18);
+    }
+  })();
+
+  // menu select: mouse + teclado estilo SNES
+  const missions = [document.getElementById('m1'), document.getElementById('m2')];
+  let sel = 0;
+  function blip(f){ try{
+    const ctx = blip.ctx || (blip.ctx = new (window.AudioContext||window.webkitAudioContext)());
+    const o = ctx.createOscillator(), g = ctx.createGain();
+    o.type='square'; o.frequency.value=f||440;
+    g.gain.value=0.04; o.connect(g); g.connect(ctx.destination);
+    o.start(); o.stop(ctx.currentTime+0.07);
+  }catch(e){} }
+  function setSel(n){
+    sel = (n + missions.length) % missions.length;
+    missions.forEach((m,k)=>m.classList.toggle('sel', k===sel));
+    blip(sel===0?520:340);
+  }
+  missions.forEach((m,k)=>{
+    m.addEventListener('mouseenter', ()=>{
+      if(sel!==k){ sel=k; missions.forEach((x,j)=>x.classList.toggle('sel', j===sel)); blip(660); }
+    });
+  });
+  document.addEventListener('keydown', e=>{
+    if(e.key==='ArrowDown'||e.key==='ArrowRight'){ e.preventDefault(); setSel(sel+1); }
+    if(e.key==='ArrowUp'||e.key==='ArrowLeft'){ e.preventDefault(); setSel(sel-1); }
+    if(e.key==='Enter'){ blip(880); window.location.href = missions[sel].href; }
+  });
+</script>
 </body>
 </html>
