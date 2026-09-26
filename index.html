@@ -1,10 +1,175 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8"/>
-    <title>unForgotten - Cronologia</title>  
-  </head>
-  <body>
-    Estas são as narrativas dos eventos acontecidos com um pequeno grupos de pessoas ao longo do tempo.
-  </body>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gun Hazard — Criador de conteúdo de RPG independente</title>
+  <meta name="description" content="Gun Hazard — criador de conteúdo de RPG independente. Acesse o criador de fichas de personagens online ou baixe para usar offline." />
+  <style>
+    :root {
+      --bg: #0f0e17;
+      --bg2: #1a1830;
+      --card: #1e1c33;
+      --text: #fffffe;
+      --muted: #a7a9be;
+      --accent: #e53170;
+      --accent2: #ff8906;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, sans-serif;
+      background: radial-gradient(1200px 600px at 50% -10%, #2a2658 0%, var(--bg) 60%) fixed, var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      line-height: 1.6;
+    }
+    header {
+      text-align: center;
+      padding: 72px 24px 24px;
+      max-width: 720px;
+    }
+    .badge {
+      display: inline-block;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border: 1px solid #2e2b52;
+      padding: 6px 14px;
+      border-radius: 999px;
+      margin-bottom: 20px;
+      background: rgba(255,255,255,0.03);
+    }
+    h1 {
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+    }
+    h1 span {
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .subtitle {
+      margin-top: 16px;
+      font-size: 1.25rem;
+      color: var(--muted);
+    }
+    main {
+      width: 100%;
+      max-width: 720px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02)), var(--card);
+      border: 1px solid #2e2b52;
+      border-radius: 20px;
+      padding: 28px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    }
+    .card h2 {
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+    }
+    .card p {
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 20px;
+      border-radius: 12px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.1s ease, opacity 0.2s;
+      border: 1px solid transparent;
+    }
+    .btn:hover { transform: translateY(-1px); opacity: 0.95; }
+    .btn-primary {
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      color: white;
+    }
+    .btn-secondary {
+      background: transparent;
+      color: var(--text);
+      border-color: #3f3a74;
+    }
+    .meta {
+      margin-top: 16px;
+      font-size: 0.9rem;
+      color: var(--muted);
+      word-break: break-all;
+    }
+    .meta code {
+      background: #0f0e17;
+      padding: 2px 6px;
+      border-radius: 6px;
+      border: 1px solid #2e2b52;
+    }
+    footer {
+      margin-top: auto;
+      padding: 32px 24px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      text-align: center;
+    }
+    footer a { color: var(--text); }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="badge">🎲 RPG independente</div>
+    <h1>Gun <span>Hazard</span></h1>
+    <p class="subtitle">criador de conteúdo de RPG independente</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>📜 Criador de Fichas de Personagens</h2>
+      <p>Crie, edite e gerencie fichas de personagens para suas mesas de RPG. Use direto no navegador ou baixe para jogar offline.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://gun-hazard.github.io/criador_de_fichas/" target="_blank" rel="noopener">
+          ▶ Acessar online
+        </a>
+        <a class="btn btn-secondary" href="https://gun-hazard.github.io/criador_de_fichas.zip" download>
+          ⬇ Baixar (.zip)
+        </a>
+      </div>
+      <div class="meta">
+        Online: <code>https://gun-hazard.github.io/criador_de_fichas/</code><br />
+        Download: <code>https://gun-hazard.github.io/criador_de_fichas.zip</code>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>👋 Sobre</h2>
+      <p>Olá! Eu sou o <strong>Gun Hazard</strong>, criador de conteúdo de RPG independente. Aqui você encontra minhas ferramentas e projetos para turbinar suas mesas.</p>
+      <p style="margin:0">Encontrou um bug ou tem uma sugestão? Abra uma issue no <a href="https://github.com/gun-hazard" style="color:#fff">GitHub</a>.</p>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="ano">2026</span> Gun Hazard — Feito para mesas de RPG.<br />
+    <a href="https://gun-hazard.github.io/">gun-hazard.github.io</a>
+  </footer>
+
+  <script>
+    document.getElementById('ano').textContent = new Date().getFullYear();
+  </script>
+</body>
 </html>
